@@ -1,4 +1,5 @@
 import React from "react";
+import { motion } from "framer-motion";
 
 interface LayoutChildren {
   children: React.ReactNode;
@@ -6,6 +7,13 @@ interface LayoutChildren {
 
 export default function Layout({ children }: LayoutChildren) {
   return (
-    <div className="mx-auto max-w-5xl px-2 sm:px-6 lg:px-8">{children}</div>
+    <motion.div
+      initial={{ translateY: 50, opacity: 0 }}
+      animate={{ translateY: 0, opacity: 1 }}
+      transition={{ duration: 0.5 }}
+      className="mx-auto max-w-5xl px-2 sm:px-6 lg:px-8"
+    >
+      {children}
+    </motion.div>
   );
 }
