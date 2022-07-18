@@ -7,22 +7,15 @@ module.exports = {
         sans: ['"Plus Jakarta Sans"', "sans-serif"],
       },
       colors: {
-        night: {
-          dark: "#232946",
-          gray: "#B8C1EC",
-          pink: "#EEBBC3",
-          white: "#FFFFFE",
-        },
-        ocean: {
-          deep: "#094067",
-          blue: "#3DA9FC",
-          gray: "#5F6C7B",
-          white: "#FFFFFE",
+        light: {
+          base: "#fffffe",
+          title: "#094067",
+          paragraph: "#5f6c7b",
+          button: "#3da9fc",
+          "button-text": "#fffffe",
         },
       },
     },
   },
-  plugins: [
-    require('@tailwindcss/typography')
-  ],
+  plugins: [require("@tailwindcss/typography")],
 };

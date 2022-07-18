@@ -1,5 +1,4 @@
-import { PrismaClient } from "@prisma/client";
-import { json, MetaFunction } from "@remix-run/node";
+import { MetaFunction } from "@remix-run/node";
 import {
   Links,
   LiveReload,
@@ -24,7 +23,7 @@ export const meta: MetaFunction = () => ({
 
 export default function App() {
   return (
-    <html lang="en" className="bg-night-dark">
+    <html lang="en" className="bg-light-base">
       <head>
         <Meta />
         <Links />

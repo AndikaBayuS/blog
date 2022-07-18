@@ -1,15 +1,15 @@
 import { Disclosure } from "@headlessui/react";
 import { MenuIcon, XIcon } from "@heroicons/react/outline";
-import { Link } from "@remix-run/react";
+import { Link, NavLink } from "@remix-run/react";
 
 export default function Navbar() {
   const navigation = [
-    { name: "Home", href: "#", current: true },
-    { name: "Project", href: "#", current: true },
-    { name: "About", href: "#", current: true },
+    { name: "Home", href: "/" },
+    { name: "Blog", href: "blog" },
+    { name: "About", href: "about" },
   ];
   return (
-    <Disclosure as="nav" className="border-b border-dashed border-night-white">
+    <Disclosure as="nav" className="border-light-title border-b border-dashed">
       {({ open }) => (
         <>
           <div className="mx-auto max-w-5xl px-2 sm:px-6 lg:px-8">
@@ -32,20 +32,27 @@ export default function Navbar() {
               </div>
               <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-between">
                 <div className="flex flex-shrink-0">
-                  <Link to="/" className="text-3xl font-semibold text-night-white">
+                  <Link
+                    to="/"
+                    className="text-3xl font-semibold text-light-title"
+                  >
                     andikabays
                   </Link>
                 </div>
                 <div className="hidden sm:ml-6 sm:block">
                   <div className="flex space-x-4">
-                    {navigation.map(({ name, href, current }) => (
-                      <a
+                    {navigation.map(({ name, href }) => (
+                      <NavLink
                         key={name}
-                        href={href}
-                        className="rounded-md bg-night-pink px-2 py-2 font-semibold text-night-dark"
+                        to={href}
+                        className={({ isActive }) =>
+                          isActive
+                            ? "bg-light-button text-light-button-text rounded-md px-2 py-2 font-semibold"
+                            : "text-light-title rounded-md px-2 py-2 font-semibold"
+                        }
                       >
                         {name}
-                      </a>
+                      </NavLink>
                     ))}
                   </div>
                 </div>
@@ -55,7 +62,7 @@ export default function Navbar() {
 
           <Disclosure.Panel className="sm:hidden">
             <div className="space-y-1 px-2 pt-2 pb-3">
-              {navigation.map(({ name, href, current }) => (
+              {navigation.map(({ name, href }) => (
                 <Disclosure.Button
                   key={name}
                   as="a"
