@@ -47,7 +47,7 @@ export default function Navbar() {
                         to={href}
                         className={({ isActive }) =>
                           isActive
-                            ? "bg-light-button text-light-button-text rounded-md px-2 py-2 font-semibold"
+                            ? "bg-light-button text-light-base rounded-md px-2 py-2 font-semibold"
                             : "text-light-title rounded-md px-2 py-2 font-semibold"
                         }
                       >

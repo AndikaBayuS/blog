@@ -11,7 +11,7 @@ export default function Header() {
           Well, I'm an Informatics student who interested with web development.
         </p>
         <div className="mt-2 w-24 rounded-full bg-light-button px-2 py-2">
-          <p className="text-center font-bold text-light-button-text">GitHub</p>
+          <p className="text-center font-bold text-light-base">GitHub</p>
         </div>
       </div>
       <div className="flex w-full justify-center md:justify-end">

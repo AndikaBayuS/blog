@@ -12,7 +12,6 @@ module.exports = {
           title: "#094067",
           paragraph: "#5f6c7b",
           button: "#3da9fc",
-          "button-text": "#fffffe",
         },
       },
     },
