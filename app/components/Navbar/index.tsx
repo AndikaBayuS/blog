@@ -1,6 +1,7 @@
 import { Disclosure } from "@headlessui/react";
 import { MenuIcon, XIcon } from "@heroicons/react/outline";
 import { Link, NavLink } from "@remix-run/react";
+import { motion } from "framer-motion";
 
 export default function Navbar() {
   const navigation = [
@@ -9,7 +10,7 @@ export default function Navbar() {
     { name: "About", href: "about" },
   ];
   return (
-    <Disclosure as="nav" className="border-light-title border-b border-dashed">
+    <Disclosure as="nav" className="border-b border-dashed border-light-title">
       {({ open }) => (
         <>
           <div className="mx-auto max-w-5xl px-2 sm:px-6 lg:px-8">
@@ -42,17 +43,22 @@ export default function Navbar() {
                 <div className="hidden sm:ml-6 sm:block">
                   <div className="flex space-x-4">
                     {navigation.map(({ name, href }) => (
-                      <NavLink
-                        key={name}
-                        to={href}
-                        className={({ isActive }) =>
-                          isActive
-                            ? "bg-light-button text-light-base rounded-md px-2 py-2 font-semibold"
-                            : "text-light-title rounded-md px-2 py-2 font-semibold"
-                        }
+                      <motion.div
+                        whileTap={{ scale: 0.9 }}
+                        transition={{ duration: 0.2 }}
                       >
-                        {name}
-                      </NavLink>
+                        <NavLink
+                          key={name}
+                          to={href}
+                          className={({ isActive }) =>
+                            isActive
+                              ? "inline-block rounded-md bg-light-button px-2 py-2 font-semibold text-light-base"
+                              : "inline-block rounded-md px-2 py-2 font-semibold text-light-title hover:bg-gray-200"
+                          }
+                        >
+                          {name}
+                        </NavLink>
+                      </motion.div>
                     ))}
                   </div>
                 </div>

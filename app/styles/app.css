@@ -1227,6 +1227,10 @@ video {
   display: block;
 }
 
+.inline-block{
+  display: inline-block;
+}
+
 .flex{
   display: flex;
 }
@@ -1521,6 +1525,19 @@ video {
 
 .hover\:rounded-none:hover{
   border-radius: 0px;
+}
+
+.hover\:bg-light-base\/10:hover{
+  background-color: rgb(255 255 254 / 0.1);
+}
+
+.hover\:bg-light-base\/90:hover{
+  background-color: rgb(255 255 254 / 0.9);
+}
+
+.hover\:bg-gray-200:hover{
+  --tw-bg-opacity: 1;
+  background-color: rgb(229 231 235 / var(--tw-bg-opacity));
 }
 
 .hover\:shadow-lg:hover{
