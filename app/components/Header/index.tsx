@@ -2,7 +2,7 @@ import openPeeps from "~/assets/images/open-peeps.png";
 
 export default function Header() {
   return (
-    <div className="flex h-screen flex-col-reverse justify-between items-center md:h-96 md:flex-row">
+    <div className="flex flex-col-reverse justify-between items-center md:flex-row mt-5">
       <div className="leading-relaxed antialiased w-full">
         <p className="font-semibold text-light-button">Hello,</p>
         <p className="text-4xl font-semibold text-light-title">I'm Andika</p>

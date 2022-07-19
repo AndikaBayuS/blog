@@ -31,7 +31,7 @@ export default function Index() {
   return (
     <Layout>
       <Header />
-      <div className="pb-5">
+      <div className="my-6">
         <p className="text-3xl font-semibold text-light-title">Latest Post</p>
         <div className="mt-5 grid grid-cols-1 gap-5 md:grid-cols-2">
           {posts.map((post: posts) => (
